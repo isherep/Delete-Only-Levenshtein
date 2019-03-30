@@ -2,7 +2,7 @@
 ## Modified Levenshtein distance algorithms, to match strings by deletion and capitalization only and does not allow replacement or insertion of characters ##
 
 
-After working on the spellchecking application, I learned that Levenhstein distance does not return the correct word in many cases. For example _"appele"_ will return _"appelle"_. If the word contains multiple invalid duplications of repeated characters, the Levenshtein distance algorithm will return the closest matching word, but it might be not the correct word we are looking for. Also the same happens when the word has one miscapitalized letter, if the cost of inserting different or replacing it is the smallest, it will replace it with a whole different character or delete it.
+After working on the spellchecking application, I learned that Levenhstein distance does not return the correct word in many cases. For example _"applllleee"_ will return _"appelle"_ instead of _"apple"_If the word contains multiple invalid duplications of repeated characters, the Levenshtein distance algorithm will return the closest matching word, but it might be not the correct word we are looking for. It will return the word with replaced or inserted characters instead of just removed duplicated ones. Also the same happens when the word has one miscapitalized letter, if the cost of inserting different or replacing it is the smallest, it will replace it with a whole different character or delete it.
 
 I modified the Levenshtein algorithm to handle these problems.
 

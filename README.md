@@ -4,6 +4,10 @@
 
 After working on the spellchecking application, I learned that Levenhstein distance does not return the correct word in many cases. For example _"applllleee"_ will return _"appelle"_ instead of _"apple"_ If the word contains multiple invalid duplications of repeated characters, the Levenshtein distance algorithm will return the closest matching word, but it might be not the correct word we are looking for. It will return the word with replaced or inserted characters instead of just removed duplicated ones. Also the same happens when the word has one miscapitalized letter, if the cost of inserting different or replacing it is the smallest, it will replace it with a whole different character or delete it.
 
+[Delete Only Levenshtein] (https://github.com/isherep/Delete-Only-Levenshtein-Distance/blob/master/modifiedLevenshtein.java) method `deleteOnlyLevenshtein`
+
+[Delete And Replace Only Wrong Casing Levenshtein] (https://github.com/isherep/Delete-Only-Levenshtein-Distance/blob/master/modifiedLevenshtein.java) method `deleteAndReplaceWrongCasing`
+
 I modified the Levenshtein algorithm to handle these problems.
 
 The idea is the following: Edit Distance algorithm uses the smallest edit distance between two strings to perform correction. 
@@ -17,6 +21,8 @@ matching if only the case mismatched character casing needs to be replaced
 If characters have only case mismatch - allow the original cost of replacement to the correct casing.
 
 3. If the characters are not duplicated - assign a high value to deletion so it's not selected.
+
+If you found this code helpful, please give a star :star:  
 
 
                                         
